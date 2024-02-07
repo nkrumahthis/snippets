@@ -1,0 +1,8 @@
+{
+  "name": "snippets",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com-personal:nkrumahthis/snippets.git",
+  "author": "Emmanuel Nkrumah-Sarpong <nkrumahthis@gmail.com>",
+  "license": "MIT"
+}
