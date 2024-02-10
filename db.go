@@ -11,7 +11,7 @@ func (db *Database) Init() error{
 		PRAGMA foreign_keys = ON;
 		CREATE TABLE IF NOT EXISTS users (
 			id VARCHAR(30) PRIMARY KEY,
-			username VARCHAR(255) NOT NULL,
+			username VARCHAR(255) NOT NULL UNIQUE,
 			email VARCHAR(255) NOT NULL,
 			first_name VARCHAR(255) NOT NULL,
 			last_name VARCHAR(255) NOT NULL,
