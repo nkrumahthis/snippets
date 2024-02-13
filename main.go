@@ -24,11 +24,12 @@ func main() {
 		log.Fatal("Error initializing database:", err)
 	}
 
-	NewUserRepository(db)
+	userHandler := UserHandler{NewUserRepository(db)}
 	
 	fileServer := http.FileServer(http.Dir("./_ui/dist"))
 	mux := http.NewServeMux()
 	mux.Handle("/", fileServer)
+	mux.HandleFunc("/api/users", userHandler.Handle)
 
 	print("Starting server on http://localhost:8080")
 	if err := http.ListenAndServe(":8080", mux); err != nil {
